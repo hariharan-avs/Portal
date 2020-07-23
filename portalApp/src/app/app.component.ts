@@ -44,4 +44,8 @@ export class AppComponent {
     console.log('selectCity: ' + event.srcElement.value, event);
     this.selectedCity = event.srcElement.value;
   }
+
+  public changeHobby(event: any) {
+    console.log('changeHobby: ' + event);    
+  }
 }
