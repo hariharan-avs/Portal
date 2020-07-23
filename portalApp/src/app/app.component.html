@@ -1,0 +1,25 @@
+Name
+<input name="Name" (click)="click($event)" (mouseover)="mouseOver($event)" (keyup)="keyUp($event)"
+  [disabled]="isDisabled" [hidden]="isHidden" [class]="customClass" [class.uppercase]="isUpperCase"
+  [style.background-color]="isDarkTheme ? 'gray': 'white'" [ngClass]="classes" [ngStyle]="styles" [(ngModel)]="name">
+
+<div *ngIf="isSurnameEnabled">
+  Surname<input name="Surname">
+</div>
+
+City
+<select name="City" (change)="selectCity($event)">
+  <option *ngFor="let city of cityArray" [value]="city">
+    {{city}}
+  </option>
+</select>
+
+<div>
+  Country
+  <span [ngSwitch]="selectedCity">
+    <span *ngSwitchCase="'Naples'"> Italy </span>
+    <span *ngSwitchCase="'New York'"> USA </span>
+    <span *ngSwitchCase="'London'"> UK </span>
+    <span *ngSwitchDefault> Empty </span>
+  </span>
+</div>
